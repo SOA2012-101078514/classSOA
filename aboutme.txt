@@ -1,0 +1,11 @@
+Name: YU-HSUAN LEE
+Nickname: Yo Yo
+
+Department: ISS
+Track: Infotech
+
+Programming background:
+-	Java/C/SQL/PL SQL/Android
+
+Work Experience:
+-	None
