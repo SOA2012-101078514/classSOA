@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(:version => 20121125173410) do
 
+  create_table "moviegoers", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "movies", :force => true do |t|
     t.string   "title"
     t.string   "rating"
@@ -22,11 +30,4 @@ ActiveRecord::Schema.define(:version => 20121125173410) do
     t.datetime "updated_at"
   end
 
-  create_table "moviegoers", :force => true do |t|
-    t.string "provider"
-    t.string "uid"
-    t.string "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 end

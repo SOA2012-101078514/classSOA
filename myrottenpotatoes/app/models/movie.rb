@@ -1,4 +1,8 @@
 class Movie < ActiveRecord::Base
+# place a copy of the following line anywhere inside the Movie class
+#  AND inside the Moviegoer class (idiomatically, it should go right
+#  after 'class Movie' or 'class Moviegoer'):
+  has_many :reviews
 
   before_save :capitalize_title
   def capitalize_title
@@ -10,12 +14,10 @@ class Movie < ActiveRecord::Base
   validates :title, :presence => true
   validates :release_date, :presence => true
   validate :released_1930_or_later # uses custom validator below
-  validates :rating, :inclusion => {:in => RATINGS}, :unless => :grandfathered?
   def released_1930_or_later
     errors.add(:release_date, 'must be 1930 or later') if
       self.release_date < Date.parse('1 Jan 1930')
   end
-  def grandfathered? ; self.release_date >= @@grandfathered_date ; end
 
   # replaces the create method in controller:
   def create

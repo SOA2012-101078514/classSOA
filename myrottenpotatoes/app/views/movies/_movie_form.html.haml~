@@ -1,4 +1,4 @@
--# insert at top of _movie_form.html.haml
+-# in _movie_form.html.haml (the partial)
 
 - unless @movie.errors.empty?
   #warning
@@ -6,8 +6,6 @@
     %ul
       - @movie.errors.full_messages.each do |error|
         %li= error
-
--# in _movie_form.html.haml (the partial)
 
 = label :movie, :title, 'Title'
 = text_field :movie, 'title', @movie.title
