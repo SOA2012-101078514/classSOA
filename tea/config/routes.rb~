@@ -1,5 +1,5 @@
 Tea::Application.routes.draw do  
-  resources :wanted
+  resources :wanteds
   resources :people
 
   get "welcome/say_hello" => "welcome#say"

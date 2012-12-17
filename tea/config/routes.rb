@@ -1,4 +1,5 @@
 Tea::Application.routes.draw do  
+  root :to => 'wanteds#index'
   resources :wanteds
   resources :people
 
