@@ -1,0 +1,7 @@
+class CreateWanteds < ActiveRecord::Migration
+  def up
+  end
+
+  def down
+  end
+end

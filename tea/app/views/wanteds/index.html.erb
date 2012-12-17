@@ -1,0 +1,28 @@
+<h1>Listing wanteds</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Msg</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @wanteds.each do |wanted| %>
+  <tr>
+    <td><%= wanted.name %></td>
+    <td><%= wanted.msg %></td>
+    <td><%= wanted.date %></td>
+    <td><%= link_to 'Show', wanted %></td>
+    <td><%= link_to 'Edit', edit_wanted_path(wanted) %></td>
+    <td><%= link_to 'Destroy', wanted, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Wanted', new_wanted_path %>
+

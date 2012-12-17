@@ -1,0 +1,84 @@
+class WantedController < ApplicationController
+  # GET /wanted
+  # GET /wanted.json
+  def index
+    @wanted = Wanted.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @wanted }
+    end
+  end
+
+  # GET /wanted/1
+  # GET /wanted/1.json
+  def show
+    @wanted = Wanted.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @wanted }
+    end
+  end
+
+  # GET /wanted/new
+  # GET /wanted/new.json
+  def new
+    @wanted = Wanted.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @wanted }
+    end
+  end
+
+  # GET /wanted/1/edit
+  def edit
+    @wanted = Wanted.find(params[:id])
+  end
+
+  # POST /wanted
+  # POST /wanted.json
+  def create
+    @wanted = Wanted.new(params[:wanted])
+
+    respond_to do |format|
+      if @wanted.save
+        format.html { redirect_to @wanted, notice: 'Wanted was successfully created.' }
+        format.json { render json: @wanted, status: :created, location: @wanted }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @wanted.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /wanted/1
+  # PUT /wanted/1.json
+  def update
+    @wanted = Wanted.find(params[:id])
+
+    respond_to do |format|
+      if @wanted.update_attributes(params[:wanted])
+        format.html { redirect_to @wanted, notice: 'Wanted was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @wanted.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /wanted/1
+  # DELETE /wanted/1.json
+  def destroy
+    @wanted = Wanted.find(params[:id])
+    @wanted.destroy
+
+    respond_to do |format|
+      format.html { redirect_to wanted_url }
+      format.json { head :no_content }
+    end
+  end
+end
+

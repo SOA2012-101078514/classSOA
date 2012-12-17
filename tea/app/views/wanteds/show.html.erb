@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @wanted.name %>
+</p>
+
+<p>
+  <b>Msg:</b>
+  <%= @wanted.msg %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @wanted.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_wanted_path(@wanted) %> |
+<%= link_to 'Back', wanteds_path %>
+

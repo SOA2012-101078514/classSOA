@@ -1,0 +1,11 @@
+class CreateWanteds < ActiveRecord::Migration
+  def change
+    create_table :wanted do |t|
+      t.string :name
+      t.text :msg
+      t.date :date
+
+      t.timestamps
+    end
+  end
+end
